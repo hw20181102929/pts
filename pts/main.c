@@ -1,25 +1,41 @@
 #include <stdio.h>
-
-double fn( double x, int n );
-
+#include <stdlib.h>
+struct find{
+    int data;
+    struct find *next;
+};
+struct find * create()
+{
+    struct find *head,*ptr,*p;
+    ptr=(struct find *)malloc(sizeof(struct find));
+    p=(struct find *)malloc(sizeof(struct find));
+    head=(struct find *)malloc(sizeof(struct find));
+    p=NULL;
+    int x;
+    scanf("%d",&x);
+    while(x!=-1)
+    {
+        ptr->data=x;
+        ptr->next=p;
+        p=ptr;
+        ptr=(struct find *)malloc(sizeof(struct find));
+        scanf("%d",&x);
+    }
+    return p;
+}
+int delete(struct find *L,int n)
+{
+    int i=1;
+    while(L!=NULL&&i<)
+    {
+        L=L->next
+    }
+}
 int main()
 {
-    double x;
     int n;
-    
-    scanf("%lf %d", &x, &n);
-    printf("%.2f\n", fn(x,n));
-    
-    return 0;
-}
-double fn( double x, int n )
-{
-    if(n==1)
-    {
-        return x;
-    }
-    else
-    {
-        return x+x*fn(x,n-1);
-    }
+    scanf("%d",&n);
+    struct find *head,*L;
+    head=create();
+    L= delete(head,n);
 }
