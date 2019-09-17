@@ -1,15 +1,25 @@
-//
-//  main.c
-//  pts
-//
-//  Created by s20181102929 on 2019/9/17.
-//  Copyright © 2019 s20181102929. All rights reserved.
-//
-
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+double fn( double x, int n );
+
+int main()
+{
+    double x;
+    int n;
+    
+    scanf("%lf %d", &x, &n);
+    printf("%.2f\n", fn(x,n));
+    
     return 0;
+}
+double fn( double x, int n )
+{
+    if(n==1)
+    {
+        return x;
+    }
+    else
+    {
+        return x+x*fn(x,n-1);
+    }
 }
